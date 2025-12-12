@@ -1,0 +1,73 @@
+:root{
+  --bg:#0b0b0b; --panel:#171717; --text:#eaeaea; --muted:#9aa; --accent:#4fb0ff;
+  --good:#7ee787; --bad:#ff9b9b;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family: Inter, Roboto, Arial, sans-serif;
+  background:linear-gradient(180deg,var(--bg),#030303);
+  color:var(--text);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-height:100vh;
+  padding:20px;
+}
+
+/* container */
+.container{
+  width:820px; max-width:98vw;
+  background:var(--panel);
+  padding:18px;
+  border-radius:10px;
+  box-shadow:0 10px 40px rgba(0,0,0,0.7);
+}
+h1{margin:0 0 12px;font-size:20px}
+#stats{margin-bottom:12px;color:var(--muted)}
+.items .item{
+  display:flex; gap:12px; align-items:center;
+  padding:10px; border-radius:8px; margin-bottom:8px;
+  background:rgba(255,255,255,0.02);
+}
+.left{display:flex;gap:8px;flex-direction:row;align-items:center}
+.item button{
+  background:transparent; border:1px solid rgba(255,255,255,0.06);
+  color:var(--text); padding:8px 10px; border-radius:6px; cursor:pointer;
+}
+.item button:hover{border-color:var(--accent); color:var(--accent)}
+.meta{font-size:13px;color:var(--muted)}
+.runes {
+  margin-top:12px;
+  padding:10px;
+  border-radius:8px;
+  background:rgba(255,255,255,0.02);
+}
+.runes .row{display:flex;gap:12px;align-items:center;margin-bottom:8px}
+.rune-box{padding:8px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);min-width:140px}
+.rarity-common{color:#bfc; }
+.rarity-uncommon{color:#9fe;}
+.rarity-rare{color:#9cf;}
+.rarity-epic{color:#c9a5ff;}
+.rarity-legend{color:#ffd272;}
+.small{font-size:12px;color:var(--muted)}
+.foot{margin-top:10px;color:var(--muted);font-size:12px}
+button.primary{background:var(--accent);border:none;color:black;padding:8px 10px;border-radius:6px;cursor:pointer}
+button.secondary{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--text);padding:6px 8px;border-radius:6px;cursor:pointer}
+
+/* overlay / start screen */
+.overlay{
+  position:fixed; inset:0; display:flex; align-items:center; justify-content:center; background:rgba(0,0,0,0.6); z-index:30;
+}
+.overlay-card{
+  width:720px; max-width:96vw; background:var(--panel); padding:20px; border-radius:10px; color:var(--text);
+  box-shadow:0 10px 40px rgba(0,0,0,0.8);
+}
+.overlay-card h2{margin:0 0 10px}
+.overlay-card ul{margin:8px 0 0; padding-left:18px}
+
+/* inventory panel specifics */
+#runeInventoryPanel{}
+
+/* misc */
+small code{background:#0f0f0f;padding:2px 6px;border-radius:4px;color:#9fd}

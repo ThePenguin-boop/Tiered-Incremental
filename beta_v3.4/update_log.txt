@@ -1,0 +1,3 @@
+Added starting menu
+Fixed rune multiplier scaling
+Added a temporary name "Tiered Incremental" 
