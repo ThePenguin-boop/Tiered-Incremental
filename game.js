@@ -15,7 +15,12 @@ const ITEM_SETUP = [
   { name: "Item 2", baseCost: 10, scaling: 1.45 },
   { name: "Item 3", baseCost: 10, scaling: 1.40 },
   { name: "Item 4", baseCost: 10, scaling: 1.35 },
-  { name: "Item 5", baseCost: 10, scaling: 1.30 }
+  { name: "Item 5", baseCost: 10, scaling: 1.30 },
+  { name: "Item 6", baseCost: 10, scaling: 1.25 },
+  { name: "Item 7", baseCost: 10, scaling: 1.20 },
+  { name: "Item 8", baseCost: 10, scaling: 1.15 },
+  { name: "Item 9", baseCost: 10, scaling: 1.10 },
+  { name: "Item 10", baseCost: 10, scaling: 1.05 }
 ];
 
 const COIN_SPEED_MULTIPLIER = 0.25;
@@ -45,9 +50,14 @@ const RUNE_POOL = {
     boosts: [ { itemIndex: 0, mult: 1.85 }, { itemIndex: 1, mult: 1.50 }, { itemIndex: 2, mult: 1.25 } ]
   },
   legendary: {
-    chance: 1,
+    chance: .9,
     label: "Legendary",
     boosts: [ { itemIndex: 0, mult: 2.00 }, { itemIndex: 1, mult: 1.80 }, { itemIndex: 2, mult: 1.60 }, { itemIndex: 3, mult: 1.30 } ]
+  },
+  Mythic: {
+    chance: .1,
+    label: "Mythic",
+    boosts: [ { itemIndex: 0, mult: 4.50 }, { itemIndex: 1, mult: 2.50 }, { itemIndex: 2, mult: 2.00 }, { itemIndex: 3, mult: 1.50 }, { itemIndex: 4, mult: 1.25 } ]
   }
 };
 
@@ -62,7 +72,7 @@ let coins = 10;
 let coinsPerSecond = 0;
 
 // rune inventory
-const runeInventory = { common:0, uncommon:0, rare:0, epic:0, legendary:0 };
+const runeInventory = { common:0, uncommon:0, rare:0, epic:0, legendary:0, mythic:0  };
 
 // precomputed pick array
 const _runeEntries = Object.keys(RUNE_POOL).map(k => ({ key: k, chance: RUNE_POOL[k].chance }));
@@ -309,7 +319,7 @@ function refreshInventoryList() {
     const cnt = runeInventory[key] || 0;
     const div = document.createElement("div");
     div.className = "small";
-    div.innerHTML = `<span class="${key==='legendary'?'rarity-legend': key==='epic'?'rarity-epic': key==='rare'?'rarity-rare': key==='uncommon'?'rarity-uncommon':'rarity-common'}"><strong>${def.label}</strong></span>: <span style="margin-left:6px">${cnt}</span>`;
+    div.innerHTML = `<span class="${key==='mythic'?'rarity-mythic': key==='legendary'?'rarity-legend': key==='epic'?'rarity-epic': key==='rare'?'rarity-rare': key==='uncommon'?'rarity-uncommon':'rarity-common'}"><strong>${def.label}</strong></span>: <span style="margin-left:6px">${cnt}</span>`;
     list.appendChild(div);
   }
 }
@@ -329,7 +339,7 @@ function refreshInventoryPanel() {
     header.style.display = "flex";
     header.style.justifyContent = "space-between";
     header.style.alignItems = "center";
-    header.innerHTML = `<div><strong class="${key==='legendary'?'rarity-legend': key==='epic'?'rarity-epic': key==='rare'?'rarity-rare': key==='uncommon'?'rarity-uncommon':'rarity-common'}">${def.label}</strong></div>
+    header.innerHTML = `<div><strong class="${key==='mythic'?'rarity-mythic': key==='legendary'?'rarity-legend': key==='epic'?'rarity-epic': key==='rare'?'rarity-rare': key==='uncommon'?'rarity-uncommon':'rarity-common'}">${def.label}</strong></div>
                         <div style="text-align:right"><div style="font-size:18px">${cnt}</div></div>`;
     container.appendChild(header);
 
@@ -495,3 +505,4 @@ function updateCoinsPerSecond() {
   const perItem = (perItemBase + selfGrowth) * runeMultiplierForItemIndex(0);
   coinsPerSecond = i0.count * perItem * COIN_SPEED_MULTIPLIER;
 }
+
