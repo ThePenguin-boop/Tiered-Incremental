@@ -54,7 +54,7 @@ const RUNE_POOL = {
     label: "Legendary",
     boosts: [ { itemIndex: 0, mult: 2.00 }, { itemIndex: 1, mult: 1.80 }, { itemIndex: 2, mult: 1.60 }, { itemIndex: 3, mult: 1.30 } ]
   },
-  Mythic: {
+  mythic: {
     chance: .1,
     label: "Mythic",
     boosts: [ { itemIndex: 0, mult: 4.50 }, { itemIndex: 1, mult: 2.50 }, { itemIndex: 2, mult: 2.00 }, { itemIndex: 3, mult: 1.50 }, { itemIndex: 4, mult: 1.25 } ]
@@ -505,4 +505,5 @@ function updateCoinsPerSecond() {
   const perItem = (perItemBase + selfGrowth) * runeMultiplierForItemIndex(0);
   coinsPerSecond = i0.count * perItem * COIN_SPEED_MULTIPLIER;
 }
+
 
