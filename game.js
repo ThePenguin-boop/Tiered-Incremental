@@ -16,11 +16,11 @@ const ITEM_SETUP = [
   { name: "Item 3", baseCost: 10, scaling: 1.40 },
   { name: "Item 4", baseCost: 10, scaling: 1.35 },
   { name: "Item 5", baseCost: 10, scaling: 1.30 },
-  { name: "Item 6", baseCost: 10, scaling: 1.25 },
-  { name: "Item 7", baseCost: 10, scaling: 1.20 },
-  { name: "Item 8", baseCost: 10, scaling: 1.15 },
-  { name: "Item 9", baseCost: 10, scaling: 1.10 },
-  { name: "Item 10", baseCost: 10, scaling: 1.05 }
+  { name: "Item 6", baseCost: 10, scaling: 1.30 },
+  { name: "Item 7", baseCost: 10, scaling: 1.30 },
+  { name: "Item 8", baseCost: 10, scaling: 1.30 },
+  { name: "Item 9", baseCost: 10, scaling: 1.30 },
+  { name: "Item 10", baseCost: 10, scaling: 1.30 }
 ];
 
 const COIN_SPEED_MULTIPLIER = 0.25;
@@ -505,5 +505,6 @@ function updateCoinsPerSecond() {
   const perItem = (perItemBase + selfGrowth) * runeMultiplierForItemIndex(0);
   coinsPerSecond = i0.count * perItem * COIN_SPEED_MULTIPLIER;
 }
+
 
 
