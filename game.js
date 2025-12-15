@@ -11,7 +11,7 @@
 // ===== CONFIG - EDIT THESE =====
 
 const ITEM_SETUP = [
-  { name: "Item 1", baseCost: 10, scaling: 1.5 },
+  { name: "Item 1", baseCost: 10, scaling: 1.50 },
   { name: "Item 2", baseCost: 10, scaling: 1.45 },
   { name: "Item 3", baseCost: 10, scaling: 1.40 },
   { name: "Item 4", baseCost: 10, scaling: 1.35 },
@@ -505,6 +505,7 @@ function updateCoinsPerSecond() {
   const perItem = (perItemBase + selfGrowth) * runeMultiplierForItemIndex(0);
   coinsPerSecond = i0.count * perItem * COIN_SPEED_MULTIPLIER;
 }
+
 
 
 
