@@ -58,6 +58,11 @@ const RUNE_POOL = {
     chance: .1,
     label: "Mythic",
     boosts: [ { itemIndex: 0, mult: 4.50 }, { itemIndex: 1, mult: 2.50 }, { itemIndex: 2, mult: 2.00 }, { itemIndex: 3, mult: 1.50 }, { itemIndex: 4, mult: 1.25 } ]
+  },
+  universal: {
+    chance: .025,
+    label: "Universal",
+    boosts: [ { itemIndex: 2, mult: 2.00 }, { itemIndex: 3, mult: 1.50 }, { itemIndex: 4, mult: 1.25 }, { itemIndex: 5, mult: 1.25 }, { itemIndex: 6, mult: 1.05 } ]
   }
 };
 
@@ -72,7 +77,7 @@ let coins = 10;
 let coinsPerSecond = 0;
 
 // rune inventory
-const runeInventory = { common:0, uncommon:0, rare:0, epic:0, legendary:0, mythic:0  };
+const runeInventory = { common:0, uncommon:0, rare:0, epic:0, legendary:0, mythic:0, universal:0  };
 
 // precomputed pick array
 const _runeEntries = Object.keys(RUNE_POOL).map(k => ({ key: k, chance: RUNE_POOL[k].chance }));
@@ -319,7 +324,7 @@ function refreshInventoryList() {
     const cnt = runeInventory[key] || 0;
     const div = document.createElement("div");
     div.className = "small";
-    div.innerHTML = `<span class="${key==='mythic'?'rarity-mythic': key==='legendary'?'rarity-legend': key==='epic'?'rarity-epic': key==='rare'?'rarity-rare': key==='uncommon'?'rarity-uncommon':'rarity-common'}"><strong>${def.label}</strong></span>: <span style="margin-left:6px">${cnt}</span>`;
+    div.innerHTML = `<span class="${key==='universal'?'rarity-universal': key==='mythic'?'rarity-mythic': key==='legendary'?'rarity-legend': key==='epic'?'rarity-epic': key==='rare'?'rarity-rare': key==='uncommon'?'rarity-uncommon':'rarity-common'}"><strong>${def.label}</strong></span>: <span style="margin-left:6px">${cnt}</span>`;
     list.appendChild(div);
   }
 }
@@ -339,7 +344,7 @@ function refreshInventoryPanel() {
     header.style.display = "flex";
     header.style.justifyContent = "space-between";
     header.style.alignItems = "center";
-    header.innerHTML = `<div><strong class="${key==='mythic'?'rarity-mythic': key==='legendary'?'rarity-legend': key==='epic'?'rarity-epic': key==='rare'?'rarity-rare': key==='uncommon'?'rarity-uncommon':'rarity-common'}">${def.label}</strong></div>
+    header.innerHTML = `<div><strong class="${key==='universal'?'rarity-universal': key==='mythic'?'rarity-mythic': key==='legendary'?'rarity-legend': key==='epic'?'rarity-epic': key==='rare'?'rarity-rare': key==='uncommon'?'rarity-uncommon':'rarity-common'}">${def.label}</strong></div>
                         <div style="text-align:right"><div style="font-size:18px">${cnt}</div></div>`;
     container.appendChild(header);
 
