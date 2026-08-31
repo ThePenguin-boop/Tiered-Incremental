@@ -62,7 +62,7 @@ const RUNE_POOL = {
   universal: {
     chance: .025,
     label: "Universal",
-    boosts: [ { itemIndex: 2, mult: 2.00 }, { itemIndex: 3, mult: 1.50 }, { itemIndex: 4, mult: 1.25 }, { itemIndex: 5, mult: 1.25 }, { itemIndex: 6, mult: 1.05 } ]
+    boosts: [ { itemIndex: 2, mult: 3.50 }, { itemIndex: 3, mult: 2.25 }, { itemIndex: 4, mult: 1.75 }, { itemIndex: 5, mult: 1.25 }, { itemIndex: 6, mult: 1.05 } ]
   }
 };
 
