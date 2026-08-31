@@ -51,6 +51,7 @@ h1{margin:0 0 12px;font-size:20px}
 .rarity-epic{color:#c9a5ff;}
 .rarity-legend{color:#ffd272;}
 .rarity-mythic{color:#ff0000;}
+.rarity-universal{color:#5E00A8}
 .small{font-size:12px;color:var(--muted)}
 .foot{margin-top:10px;color:var(--muted);font-size:12px}
 button.primary{background:var(--accent);border:none;color:black;padding:8px 10px;border-radius:6px;cursor:pointer}
