@@ -30,7 +30,7 @@ const TICK_MS = 100;
 // The additive rule is implemented as explained above.
 const RUNE_POOL = {
   common: {
-    chance: 60,
+    chance: 59.075,
     label: "Common",
     boosts: [ { itemIndex: 0, mult: 1.50 } ] // 1.5x to Item1
   },
