@@ -67,7 +67,7 @@ const RUNE_POOL = {
 };
 
 // Roll cost (Item1)
-const ROLL_COST_ITEM1 = 25;
+const ROLL_COST_ITEM1 = 275;
 
 // ===== END CONFIG =====
 
