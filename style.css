@@ -45,13 +45,13 @@ h1{margin:0 0 12px;font-size:20px}
 }
 .runes .row{display:flex;gap:12px;align-items:center;margin-bottom:8px}
 .rune-box{padding:8px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);min-width:140px}
-.rarity-common{color:#bfc; }
+.rarity-common{color:#bfc;}
 .rarity-uncommon{color:#9fe;}
 .rarity-rare{color:#9cf;}
 .rarity-epic{color:#c9a5ff;}
 .rarity-legend{color:#ffd272;}
 .rarity-mythic{color:#ff0000;}
-.rarity-universal{color:#1d1124}
+.rarity-universal{color:#1d1124;}
 .small{font-size:12px;color:var(--muted)}
 .foot{margin-top:10px;color:var(--muted);font-size:12px}
 button.primary{background:var(--accent);border:none;color:black;padding:8px 10px;border-radius:6px;cursor:pointer}
